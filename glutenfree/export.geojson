@@ -1,0 +1,1744 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-05-18T11:13:31Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/184049330",
+        "addr:city": "Madrid",
+        "addr:housenumber": "4",
+        "addr:postcode": "28013",
+        "addr:street": "Calle de las Tres Cruces",
+        "amenity": "restaurant",
+        "contact:website": "https://restaurantesvegetarianosartemisa.com/",
+        "delivery": "yes",
+        "diet:gluten_free": "only",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "only",
+        "name": "Artemisa - Gran Vía",
+        "opening_hours": "Mo-Su 13:30-16:00,20:00-23:00",
+        "phone": "+34 915 218 721",
+        "reservation": "yes",
+        "takeaway": "yes",
+        "website:booking": "https://artemisa-solgranvia.myrestoo.net/",
+        "website:orders": "https://www.just-eat.es/restaurants-artemisa-sol-huertas-madrid"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7029032,
+          40.4192239
+        ]
+      },
+      "id": "node/184049330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/622204622",
+        "addr:housenumber": "4",
+        "addr:street": "Calle de Ventura de la Vega",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "only",
+        "name": "Artemisa - Huertas",
+        "note": "The restaurant has a vegan menu, so maybe it could be tagged as diet:vegan=only",
+        "opening_hours": "Mo-Su 13:30-16:00,20:30-23:30",
+        "phone": "+34 914 295 092",
+        "reservation": "yes",
+        "website": "https://restaurantesvegetarianosartemisa.com/",
+        "website:booking": "https://restaurantesvegetarianosartemisa.com/reservar/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6989734,
+          40.4160137
+        ]
+      },
+      "id": "node/622204622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1123962655",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "name": "Restaurante Sur",
+        "website": "https://restaurantesur.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.1962501,
+          38.7297979
+        ]
+      },
+      "id": "node/1123962655"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1276414622",
+        "addr:housename": "Conesa",
+        "addr:housenumber": "1",
+        "addr:postcode": "08002",
+        "addr:street": "Carrer de la Llibreteria",
+        "amenity": "fast_food",
+        "cuisine": "spanish",
+        "diet:gluten_free": "only",
+        "email": "clients@conesaentrepans.com",
+        "int_name": "Conesa",
+        "internet_access": "no",
+        "name": "Conesa",
+        "opening_hours": "Mo-Sa 08:30-22:15",
+        "opening_hours:covid19": "off",
+        "phone": "+34 933 10 13 94",
+        "smoking": "no",
+        "website": "https://www.conesaentrepans.com/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1771014,
+          41.383052
+        ]
+      },
+      "id": "node/1276414622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3682008528",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "449",
+        "addr:postcode": "08013",
+        "addr:street": "Carrer de Mallorca",
+        "amenity": "restaurant",
+        "capacity": "30",
+        "contact:facebook": "https://www.facebook.com/calmarius452",
+        "cuisine": "pastrami",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "yes",
+        "name": "Cal Marius 449",
+        "opening_hours": "Mo-Su 06:00-23:00",
+        "outdoor_seating": "yes",
+        "phone": "+34 93 512 79 77",
+        "smoking": "outside",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "toilets:wheelchair": "no",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1784728,
+          41.4058814
+        ]
+      },
+      "id": "node/3682008528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4374295994",
+        "addr:housenumber": "15",
+        "addr:postcode": "08012",
+        "addr:street": "Carrer de Siracusa",
+        "amenity": "restaurant",
+        "check_date": "2024-11-13",
+        "check_date:smoking": "2024-11-13",
+        "check_date:toilets:wheelchair": "2024-11-13",
+        "contact:instagram": "messie_glutenfree",
+        "cuisine": "pizza",
+        "diet:gluten_free": "only",
+        "name": "Messié Pizza Sin Gluten",
+        "name:en": "Messie Pizza Gluten Free",
+        "name:es": "Messié Pizza Sin Gluten",
+        "opening_hours": "Mo-Su 12:00-23:30",
+        "phone": "+34 931 19 56 05",
+        "smoking": "no",
+        "toilets": "yes",
+        "toilets:wheelchair": "limited",
+        "website": "https://www.messiepizza.es/messie-pizza-sin-gluten",
+        "website:menu": "https://www.messiepizza.es/messie-pizza-sin-gluten/#menu",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1595985,
+          41.4009856
+        ]
+      },
+      "id": "node/4374295994"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4386703192",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "26",
+        "addr:postcode": "08001",
+        "addr:street": "Carrer de les Ramalleres",
+        "diet:gluten_free": "only",
+        "diet:vegan": "yes",
+        "email": "hola@chokbarcelona.com",
+        "name": "Chök",
+        "opening_hours": "Mo-Su 09:00-21:00",
+        "payment:cash": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+34 936 817 849",
+        "shop": "pastry",
+        "website": "http://www.chokbarcelona.com/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1683231,
+          41.3846576
+        ]
+      },
+      "id": "node/4386703192"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4410213989",
+        "amenity": "restaurant",
+        "branch": "Senza Glutine, Zaragoza",
+        "brand": "La Tagliatella",
+        "brand:wikidata": "Q113426257",
+        "check_date": "2026-01-13",
+        "cuisine": "italian",
+        "diet:gluten_free": "only",
+        "name": "La Tagliatella",
+        "opening_hours": "Mo-Su 13:00-16:00,20:00-23:00",
+        "phone": "+34 976 35 58 55",
+        "website": "https://www.latagliatella.es/es/restaurantes/zaragoza/emperador-carlos-v-zaragoza"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8982552,
+          41.6380736
+        ]
+      },
+      "id": "node/4410213989"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4726721304",
+        "addr:city": "Granada",
+        "addr:housenumber": "19",
+        "addr:postcode": "18002",
+        "addr:street": "Calle Martínez Campos",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/Restauranteaparicios",
+        "contact:twitter": "https://twitter.com/restaparicios",
+        "diet:gluten_free": "only",
+        "name": "Aparicio's",
+        "name:es": "Aparicio's",
+        "website": "https://www.restauranteaparicios.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.60441,
+          37.1718341
+        ]
+      },
+      "id": "node/4726721304"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5717827594",
+        "addr:city": "Granada",
+        "addr:housenumber": "5",
+        "addr:postcode": "18009",
+        "addr:street": "Plaza de Isabel la Católica",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/wildfoodworld/",
+        "diet:gluten_free": "only",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "name": "Wild Food",
+        "opening_hours": "Mo-Su 07:00-23:30",
+        "phone": "+34 958 21 63 07"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.5972211,
+          37.175414
+        ]
+      },
+      "id": "node/5717827594"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5813498468",
+        "addr:housenumber": "21",
+        "addr:street": "Calle Francisco de Vitoria",
+        "check_date": "2023-01-05",
+        "diet:gluten_free": "only",
+        "name": "La Mar de Cookies",
+        "opening_hours": "Mo-Fr 10:00-14:00,17:00-20:00; PH,Sa,Su 10:00-14:00",
+        "shop": "bakery",
+        "source": "survey",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8796722,
+          41.6458232
+        ]
+      },
+      "id": "node/5813498468"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6204125281",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "106",
+        "addr:postcode": "08008",
+        "addr:street": "Carrer de Balmes",
+        "contact:phone": "+34931700714",
+        "contact:website": "http://www.glutenfree.cat/",
+        "diet:gluten_free": "only",
+        "name": "Jansana Gluten Free Bakery",
+        "opening_hours": "Mo-Sa 08:30-20:00; Su 09:00-14:00",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1588608,
+          41.3922971
+        ]
+      },
+      "id": "node/6204125281"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6528646787",
+        "addr:city": "Girona",
+        "addr:housenumber": "10",
+        "addr:postcode": "17004",
+        "addr:street": "Carrer de Guillem Minali",
+        "diet:gluten_free": "only",
+        "email": "watelia.girona@gmail.com",
+        "name": "Watelia",
+        "phone": "+34 972 90 04 44",
+        "shop": "pastry",
+        "website": "https://www.watelia.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8248576,
+          41.9843279
+        ]
+      },
+      "id": "node/6528646787"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7898655844",
+        "amenity": "restaurant",
+        "board_games": "yes",
+        "cuisine": "pizza",
+        "diet:gluten_free": "only",
+        "drink:craft_beer": "yes",
+        "name": "Mononoke",
+        "phone": "+34 876 44 32 46",
+        "website": "https://mononokecafe.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8856695,
+          41.6403053
+        ]
+      },
+      "id": "node/7898655844"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8462616719",
+        "addr:city": "Collado Villalba",
+        "addr:housenumber": "51",
+        "addr:street": "Calle La Venta",
+        "description": "Obrador sin gluten",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "yes",
+        "name": "Singlutenería",
+        "phone": "+34 910 93 42 94",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.0094755,
+          40.6323458
+        ]
+      },
+      "id": "node/8462616719"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8684414437",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "3",
+        "addr:postcode": "08007",
+        "addr:street": "Rambla de Catalunya",
+        "air_conditioning": "yes",
+        "amenity": "restaurant",
+        "bar": "no",
+        "branch": "Plaça Catalunya",
+        "brand": "Honest Greens",
+        "brand:wikidata": "Q116859710",
+        "brewery": "no",
+        "check_date": "2024-10-26",
+        "cuisine": "organic",
+        "diet:gluten_free": "only",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:ssid": "HONEST GREENS FREE",
+        "name": "Honest Greens",
+        "opening_hours": "Mo-Su 09:30-22:00",
+        "organic": "only",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+34931227664",
+        "smoking": "no",
+        "toilets": "yes",
+        "website": "https://honestgreens.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1679623,
+          41.387556
+        ]
+      },
+      "id": "node/8684414437"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9132646917",
+        "addr:housenumber": "49",
+        "addr:postcode": "28006",
+        "addr:street": "Calle del Gral Oraà",
+        "diet:gluten_free": "only",
+        "name": "Sana Locura Gluten Free Bakery",
+        "opening_hours": "Mo-Sa 09:00-14:00",
+        "phone": "+34917295747",
+        "shop": "bakery",
+        "website": "https://www.sanalocura.es/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6801667,
+          40.4360806
+        ]
+      },
+      "id": "node/9132646917"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9236150777",
+        "diet:gluten_free": "only",
+        "diet:vegan": "only",
+        "diet:vegetarian": "only",
+        "name": "Hanai",
+        "old_name": "l'hort del born",
+        "shop": "pastry",
+        "website": "https://hanaivegana.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1803146,
+          41.3867601
+        ]
+      },
+      "id": "node/9236150777"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9331955639",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "name": "3 Tablones",
+        "phone": "+34 663 299 037",
+        "website": "https://3tablones.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1520064,
+          42.9442604
+        ]
+      },
+      "id": "node/9331955639"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9741158517",
+        "addr:housenumber": "91",
+        "addr:street": "Carrer de Casanova",
+        "amenity": "fast_food",
+        "cuisine": "fish_and_chips",
+        "diet:gluten_free": "only",
+        "email": "info@thefishandchipsshop.es",
+        "name": "The Fish & Chips Shop",
+        "name:ca": "The Fish & Chips Shop Gluten Free",
+        "name:en": "The Fish & Chips Shop Gluten Free",
+        "name:es": "The Fish & Chips Shop Gluten Free",
+        "website": "https://thefishandchipsshop.es/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1567554,
+          41.386737
+        ]
+      },
+      "id": "node/9741158517"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9810706986",
+        "addr:city": "Narón",
+        "addr:housenumber": "5",
+        "addr:street": "Rúa Francisco Pizarro",
+        "check_date": "2025-03-05",
+        "contact:instagram": "pasteleriasanty",
+        "diet:egg_free": "yes",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "yes",
+        "diet:sugar_free": "yes",
+        "name": "Santy Sin Gluten",
+        "opening_hours": "Mo off; Tu-Su 08:00-14:30",
+        "phone": "+34 981 385666",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.2043568,
+          43.5010557
+        ]
+      },
+      "id": "node/9810706986"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9812028128",
+        "addr:housenumber": "219",
+        "addr:postcode": "08001",
+        "addr:street": "Carrer de Balmes",
+        "contact:email": "coliakibcn@gmail.com",
+        "contact:instagram": "coliakibcn",
+        "diet:gluten_free": "only",
+        "name": "Cøliaki",
+        "opening_hours": "Mo-Sa 08:30-20:00",
+        "phone": "+34 931 27 75 70",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1508393,
+          41.3986681
+        ]
+      },
+      "id": "node/9812028128"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10241104310",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "35",
+        "addr:postcode": "08001",
+        "addr:street": "Carrer Nou de la Rambla",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "name": "My Fucking Restaurant",
+        "opening_hours": "Mo-Su 19:00-23:00",
+        "phone": "+34 936 39 78 27",
+        "website": "https://myfuckingrestaurant.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.173039,
+          41.3778272
+        ]
+      },
+      "id": "node/10241104310"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10309397571",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "13",
+        "addr:postcode": "08007",
+        "addr:street": "Carrer d'Enric Granados",
+        "amenity": "restaurant",
+        "check_date": "2024-12-01",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "yes",
+        "diet:sugar_free": "yes",
+        "diet:vegan": "yes",
+        "email": "reservas@a-vocados.com",
+        "name": "A Vocados",
+        "opening_hours": "We-Sa 13:00-16:00,20:00-23:30; Su 13:00-16:00,20:00-23:00; Tu 20:00-23:00",
+        "panoramax": "3f27484e-2329-4c9c-b19b-51fe5de4dd9d",
+        "panoramax:0": "861d1cc3-932e-4a4b-b579-c9aefa824eba",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "phone": "+34 656 53 08 33",
+        "website": "https://www.a-vocados.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1621896,
+          41.387828
+        ]
+      },
+      "id": "node/10309397571"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10675731308",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "204",
+        "addr:postcode": "08011",
+        "addr:street": "Carrer de València",
+        "amenity": "restaurant",
+        "check_date": "2025-12-25",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "yes",
+        "diet:vegan": "only",
+        "email": "hello@potstot.com",
+        "level": "0",
+        "name": "Pötstot",
+        "opening_hours": "We-Th,Su 13:00-16:00, 19:00-23:00; Fr-Sa 13:00-16:00, 19:00-00:00",
+        "outdoor_seating": "yes",
+        "phone": "+34 620 34 90 19",
+        "reservation": "yes",
+        "website": "https://www.potstot.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1583055,
+          41.3886715
+        ]
+      },
+      "id": "node/10675731308"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10697574106",
+        "amenity": "restaurant",
+        "check_date": "2024-10-19",
+        "diet:gluten_free": "only",
+        "name": "La Nonna Carmela",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6000882,
+          37.1750089
+        ]
+      },
+      "id": "node/10697574106"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10726460912",
+        "addr:city": "Santa Perpètua de Mogoda",
+        "addr:housenumber": "14",
+        "addr:street": "Carrer de Martí Costa",
+        "diet:gluten_free": "only",
+        "email": "info@jansanaglutenfree.com",
+        "name": "Jansana Gluten Free Bakery",
+        "opening_hours": "Sa-Su 09:00-14:00",
+        "phone": "+34 931 70 07 14",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1804463,
+          41.535845
+        ]
+      },
+      "id": "node/10726460912"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10726460913",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "361",
+        "addr:postcode": "08009",
+        "addr:street": "Carrer de la Diputació",
+        "amenity": "cafe",
+        "diet:gluten_free": "only",
+        "email": "hola@gulasana.com",
+        "name": "Gula Sana",
+        "opening_hours": "Mo-Su 09:00-21:00",
+        "phone": "+34 930 24 52 35",
+        "website": "https://www.gulasana.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1746413,
+          41.3963053
+        ]
+      },
+      "id": "node/10726460913"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10726460914",
+        "addr:city": "Badalona",
+        "addr:housenumber": "9",
+        "addr:postcode": "08912",
+        "addr:street": "Avinguda de Sant Ignasi de Loiola",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "yes",
+        "diet:vegan": "yes",
+        "name": "Ca La María",
+        "opening_hours": "Mo-Fr 09:00-13:30, 16:30-20:30; Sa-Su 09:00-14:30, 16:30-20:30",
+        "phone": "+34 931 45 18 00",
+        "shop": "bakery",
+        "website": "https://www.calamariaobrador.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2434241,
+          41.4478704
+        ]
+      },
+      "id": "node/10726460914"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10726460915",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "5",
+        "addr:postcode": "08028",
+        "addr:street": "Carrer de la Pobla de Lillet",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "yes",
+        "name": "Celiadictos",
+        "opening_hours": "Mo-Fr 10:00-20:00; Sa 09:00-14:00; Su,PH off",
+        "phone": "+34 93 409 31 31",
+        "shop": "bakery",
+        "website": "https://celiadictos.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1294867,
+          41.3802512
+        ]
+      },
+      "id": "node/10726460915"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10726490563",
+        "addr:city": "L'Hospitalet de Llobregat",
+        "addr:housenumber": "12",
+        "addr:postcode": "08901",
+        "addr:street": "Carrer de Pau Sans",
+        "amenity": "restaurant",
+        "cuisine": "pastrami",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "yes",
+        "email": "calmarius449@gmail.com",
+        "name": "Cal Màrius LH",
+        "opening_hours": "Mo-Su 08:30-16:00",
+        "phone": "+34 936 39 92 43",
+        "website": "https://calmarius.es"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1115232,
+          41.3628739
+        ]
+      },
+      "id": "node/10726490563"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10726689311",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "282",
+        "addr:postcode": "08028",
+        "addr:street": "Carrer de Galileu",
+        "amenity": "cafe",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "yes",
+        "name": "BoPerTu Cafè",
+        "opening_hours": "Tu-Fr 09:00-16:00; Sa 09:30-16:00",
+        "phone": "+34 930 31 83 54",
+        "website": "https://www.bopertucafe.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1324666,
+          41.3836907
+        ]
+      },
+      "id": "node/10726689311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10726689312",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "72",
+        "addr:street": "Carrer del Baluard",
+        "amenity": "restaurant",
+        "cuisine": "colombian",
+        "diet:gluten_free": "only",
+        "name": "Muysca",
+        "phone": "+34 688 31 45 15",
+        "website": "https://www.muysca.es"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1894581,
+          41.3786255
+        ]
+      },
+      "id": "node/10726689312"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10726689314",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "505",
+        "addr:postcode": "08029",
+        "addr:street": "Avinguda Diagonal",
+        "amenity": "restaurant",
+        "check_date": "2023-10-19",
+        "diet:gluten_free": "only",
+        "highchair": "yes",
+        "name": "M2 Gluten Free",
+        "outdoor_seating": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.141672,
+          41.3915888
+        ]
+      },
+      "id": "node/10726689314"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10726771016",
+        "addr:housenumber": "13",
+        "addr:postcode": "08012",
+        "addr:street": "Carrer del Perill",
+        "amenity": "restaurant",
+        "check_date": "2023-05-23",
+        "contact:instagram": "gut_restaurant",
+        "cuisine": "mediterranean;oriental",
+        "diet:gluten_free": "only",
+        "diet:vegan": "yes",
+        "email": "restaurantgut@gmail.com",
+        "name": "Gut",
+        "opening_hours": "Mo-Th 13:00-16:00, 19:30-22:30; Fr-Sa 13:00-16:00, 19:30-23:30; Su 13:00-16:00",
+        "phone": "+34 644 91 90 13;+34931866360",
+        "website": "https://www.restaurantgut.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1612314,
+          41.3993559
+        ]
+      },
+      "id": "node/10726771016"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10726771017",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "109",
+        "addr:postcode": "08001",
+        "addr:street": "Carrer de Muntaner",
+        "amenity": "restaurant",
+        "contact:instagram": "messie_glutenfree",
+        "cuisine": "pizza",
+        "diet:gluten_free": "only",
+        "name": "Messié Pizza Sin Gluten",
+        "name:en": "Messié Pizza Gluten Free",
+        "name:es": "Messié Pizza Sin Gluten",
+        "opening_hours": "Mo-Su 12:00-23:30",
+        "phone": "+34 938 08 23 03",
+        "website": "https://www.messiepizza.es/messie-pizza-sin-gluten",
+        "website:menu": "https://www.messiepizza.es/messie-pizza-sin-gluten/#menu",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1557184,
+          41.3892723
+        ]
+      },
+      "id": "node/10726771017"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10748551155",
+        "addr:city": "Madrid",
+        "addr:housenumber": "30",
+        "addr:postcode": "28003",
+        "addr:street": "Calle de María de Guzmán",
+        "branch": "María de Guzmán",
+        "description": "Gluten-Free Bakery",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "yes",
+        "name": "LEON The Baker",
+        "opening_hours": "Su-Th 08:30-20:00; Fr-Sa 08:30-21:00",
+        "operator": "LEON The Baker",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "phone": "+34 722 836 463",
+        "shop": "bakery",
+        "website": "https://leonthebaker.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6985021,
+          40.4440089
+        ]
+      },
+      "id": "node/10748551155"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10772613256",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "327",
+        "addr:postcode": "08037",
+        "addr:street": "Carrer de Provença",
+        "amenity": "restaurant",
+        "cuisine": "sushi",
+        "diet:gluten_free": "only",
+        "email": "admin@arukubcn.com",
+        "name": "Aruku Bcn",
+        "opening_hours": "Su-Th 13:00-23:30; Fr-Sa 13:00-00:00",
+        "phone": "+34 934 59 26 42",
+        "smoking": "outside",
+        "website": "https://arukubcn.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.167484,
+          41.3994985
+        ]
+      },
+      "id": "node/10772613256"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773620339",
+        "addr:city": "Pineda de Mar",
+        "addr:housenumber": "46",
+        "addr:postcode": "08397",
+        "addr:street": "Passeig Marítim",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "name": "El Peix Grillat",
+        "opening_hours": "We-Su 09:00-17:00",
+        "phone": "+34 638 84 64 90",
+        "website": "https://www.elpeixgrillat.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.6795179,
+          41.6185338
+        ]
+      },
+      "id": "node/10773620339"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773675666",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "593",
+        "addr:postcode": "08014",
+        "addr:street": "Avinguda Diagonal",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "name": "Manioca",
+        "opening_hours": "Mo-Fr 08:30-17:30; Sa 10:15-15:30",
+        "phone": "+34 931 05 07 66",
+        "website": "https://delivery.manioca.es/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1310182,
+          41.3885398
+        ]
+      },
+      "id": "node/10773675666"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10773675667",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "56",
+        "addr:postcode": "08005",
+        "addr:street": "Carrer de Sardenya",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "name": "Manioca",
+        "opening_hours": "Mo-We 11:00-17:15; Th-Fr 11:00-22:30; Sa 10:00-22:30; Su 10:00-20:30",
+        "phone": "+34 934 61 92 25",
+        "website": "https://delivery.manioca.es/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1899334,
+          41.3910247
+        ]
+      },
+      "id": "node/10773675667"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10778528282",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "30",
+        "addr:postcode": "08006",
+        "addr:street": "Carrer de Regàs",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "yes",
+        "diet:vegan": "yes",
+        "email": "hola@maai.es",
+        "name": "MAAI",
+        "opening_hours": "Mo-Fr 09:00-16:00",
+        "phone": "+34 938 09 83 41",
+        "website": "https://www.maai.es/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1508809,
+          41.3995057
+        ]
+      },
+      "id": "node/10778528282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10778528283",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "153",
+        "addr:postcode": "08009",
+        "addr:street": "Carrer de Pau Claris",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "diet:gluten_free": "only",
+        "diet:vegan": "yes",
+        "name": "Pizza Natura",
+        "website": "https://pizzanatura.es/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1645638,
+          41.3945052
+        ]
+      },
+      "id": "node/10778528283"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10869004619",
+        "addr:city": "Lleida",
+        "addr:housenumber": "107",
+        "addr:postcode": "25005",
+        "addr:street": "Avinguda de l'Alcalde Porqueres",
+        "diet:gluten_free": "only",
+        "email": "monceliac@hotmail.com",
+        "name": "Món Celíac",
+        "opening_hours": "Tu-Th 09:00-14:00, 17:00-20:00; Fr 09:00-20:00; Sa 09:00-14:00",
+        "phone": "+34 973 23 95 36",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.6216548,
+          41.6309834
+        ]
+      },
+      "id": "node/10869004619"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10873941254",
+        "addr:city": "Girona",
+        "addr:housenumber": "7",
+        "addr:postcode": "17002",
+        "addr:street": "Plaça de Salvador Espriu",
+        "diet:gluten_free": "only",
+        "name": "Bye Bye Blat",
+        "opening_hours": "Tu-Sa 08:45-13:45, 16:30-20:30",
+        "phone": "+34 669 71 71 70",
+        "shop": "bakery",
+        "website": "https://byebyeblat.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8230022,
+          41.9802958
+        ]
+      },
+      "id": "node/10873941254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10874108353",
+        "addr:city": "Girona",
+        "addr:housenumber": "45",
+        "addr:postcode": "17007",
+        "addr:street": "Passeig de Sant Joan Bosco",
+        "diet:gluten_free": "only",
+        "email": "glutenfree@obradorglutenfree.com",
+        "name": "Obrador Gluten Free",
+        "opening_hours": "Fr 08:00-15:00",
+        "phone": "+34 661 53 85 51",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8247782,
+          42.007518
+        ]
+      },
+      "id": "node/10874108353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11032902044",
+        "addr:housenumber": "16",
+        "addr:postcode": "08800",
+        "addr:street": "Plaça de les Cols",
+        "contact:phone": "+34 695214553",
+        "diet:gluten_free": "only",
+        "name": "Beneida bogeria",
+        "shop": "bakery",
+        "source": "Opendata Ajuntament de Vilanova i la Geltrú",
+        "source:date": "2015-03-15",
+        "survey:date": "2022-08-05"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.725585,
+          41.2263763
+        ]
+      },
+      "id": "node/11032902044"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11140406896",
+        "addr:city": "Palma",
+        "addr:housenumber": "279",
+        "addr:postcode": "07015",
+        "addr:street": "Avinguda de Joan Miró",
+        "air_conditioning": "yes",
+        "amenity": "fast_food",
+        "contact:facebook": "https://www.facebook.com/avocadomallorca",
+        "cuisine": "burger;sandwich;coffee_shop;crepe;smoothie;dessert",
+        "delivery": "yes",
+        "diet:celiac": "yes",
+        "diet:gluten_free": "yes",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "email": "avocadomallorca@gmail.com",
+        "internet_access": "wlan",
+        "loc_name": "Avocado Mallorca",
+        "name": "Avocado Mallorca",
+        "opening_hours": "Mo-Su 09:00-16:00",
+        "payment:cash": "yes",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+34871532073",
+        "source": "Institut Municipal d'Innovació (2023);survey;local knowledge",
+        "stars": "4",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "website": "https://www.avocadomallorca.es/inicio3",
+        "website:menu": "https://www.avocadomallorca.es/menu",
+        "wheelchair": "yes",
+        "wikipedia": "es:Avocado"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.6055636,
+          39.5536879
+        ]
+      },
+      "id": "node/11140406896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11178457512",
+        "amenity": "pub",
+        "check_date": "2025-09-13",
+        "diet:gluten_free": "only",
+        "name": "La jaula de grillos",
+        "opening_hours": "Tu-Th 11:00-16:00,19:30-23:30; Fr 11:00-16:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8833384,
+          41.6485067
+        ]
+      },
+      "id": "node/11178457512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11303142329",
+        "addr:housenumber": "327",
+        "addr:street": "C/ de Provença",
+        "amenity": "restaurant",
+        "check_date": "2024-03-14",
+        "cuisine": "japanese",
+        "diet:gluten_free": "only",
+        "name": "ARUKU Sin Gluten Sushi Gluten Free",
+        "opening_hours": "Mo-Th, Su 13:00-23:30; Fr, Sa 13:00-00:00",
+        "phone": "+34 692043240",
+        "smoking": "outside",
+        "website": "https://arukubcn.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1676227,
+          41.3995079
+        ]
+      },
+      "id": "node/11303142329"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11356986495",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "9",
+        "addr:place": "Plaça Comercial",
+        "addr:postcode": "08003",
+        "amenity": "cafe",
+        "branch": "Born",
+        "brand": "chök",
+        "contact:facebook": "https://www.facebook.com/ChokBcn/",
+        "contact:instagram": "https://www.instagram.com/thechokshop",
+        "contact:linkedin": "https://www.linkedin.com/company/thechockshop",
+        "diet:gluten_free": "only",
+        "email": "hola@chok.shop",
+        "name": "chök",
+        "opening_hours": "09:00-21:00",
+        "website": "https://www.chok.shop/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1834197,
+          41.385258
+        ]
+      },
+      "id": "node/11356986495"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11609776169",
+        "addr:housenumber": "67",
+        "addr:street": "Avenida Carlos III el Noble",
+        "air_conditioning": "yes",
+        "amenity": "restaurant",
+        "cuisine": "italian;pasta;pizza",
+        "diet:gluten_free": "only",
+        "diet:halal": "no",
+        "diet:kosher": "no",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "indoor_seating": "yes",
+        "name": "La Tagliatella",
+        "outdoor_seating": "yes",
+        "phone": "+34 948 78 37 97",
+        "smoking": "outside",
+        "website": "https://www.latagliatella.es/es/restaurantes/navarra/ccarlos-iii-pamplona"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6360107,
+          42.8105508
+        ]
+      },
+      "id": "node/11609776169"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11991755101",
+        "addr:housenumber": "504",
+        "addr:street": "Carrer de Mallorca",
+        "check_date": "2024-06-19",
+        "diet:gluten_free": "only",
+        "name": "Coliaki Gluten Free",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1806493,
+          41.4072327
+        ]
+      },
+      "id": "node/11991755101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12068621734",
+        "amenity": "fast_food",
+        "cuisine": "Argentinian",
+        "delivery": "yes",
+        "diet:gluten_free": "only",
+        "fixme": "Freeform tag `cuisine` used, to be doublechecked",
+        "name": "Mi lugar Celíaco",
+        "payment:cards": "yes",
+        "payment:cash": "yes",
+        "payment:qr_code": "no",
+        "smoking": "no",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3722572,
+          39.4659099
+        ]
+      },
+      "id": "node/12068621734"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12109940861",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "indoor_seating": "yes",
+        "name": "Azafrán del cabo",
+        "opening_hours": "13:00-16:00, 20:30-23:30",
+        "outdoor_seating": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.0062752,
+          36.8794474
+        ]
+      },
+      "id": "node/12109940861"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12176925686",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "name": "El Escondite"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7889541,
+          37.7656514
+        ]
+      },
+      "id": "node/12176925686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12176959940",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "name": "Panecelli Sin Gluten"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7815,
+          37.8020712
+        ]
+      },
+      "id": "node/12176959940"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12176978616",
+        "amenity": "restaurant",
+        "diet:gluten_free": "only",
+        "name": "Obrador La Panadería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7870727,
+          37.7804371
+        ]
+      },
+      "id": "node/12176978616"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12337362272",
+        "diet:dairy_free": "only",
+        "diet:gluten_free": "only",
+        "name": "Pastelería RC",
+        "shop": "pastry",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "toilets:fee": "no",
+        "toilets:gender_segregated": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6773224,
+          38.2769698
+        ]
+      },
+      "id": "node/12337362272"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12568383163",
+        "addr:city": "Alicante",
+        "addr:housenumber": "20",
+        "addr:street": "Carrer de Canalejas",
+        "amenity": "cafe",
+        "diet:gluten_free": "only",
+        "diet:vegan": "only",
+        "email": "info@singlutenveganbombon.com",
+        "indoor_seating": "yes",
+        "name": "Sin Gluten Vegan Bombon",
+        "outdoor_seating": "no",
+        "takeaway": "yes",
+        "website": "https://singlutenveganbombon.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4868895,
+          38.3426267
+        ]
+      },
+      "id": "node/12568383163"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12639513092",
+        "addr:floor": "0",
+        "check_date": "2025-03-11",
+        "diet:gluten_free": "only",
+        "level": "0",
+        "name": "Santy Sin Gluten",
+        "phone": "+34 881 51 26 63",
+        "shop": "bakery",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.2053084,
+          43.5010167
+        ]
+      },
+      "id": "node/12639513092"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12708357588",
+        "addr:city": "Barcelona",
+        "addr:housenumber": "173",
+        "addr:postcode": "08012",
+        "addr:street": "Travessera de Gràcia",
+        "contact:email": "info@glutentag.cat",
+        "contact:facebook": "https://www.facebook.com/glutentagbcn",
+        "contact:instagram": "https://www.instagram.com/glutentagbcn/",
+        "contact:phone": "+34613448807",
+        "contact:website": "https://www.glutentag.cat/",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "only",
+        "email": "info@glutentag.cat",
+        "name": "Gluten Tag",
+        "name:ca": "Gluten Tag",
+        "opening_hours": "Tu-Sa 10:00-20:00",
+        "shop": "bakery",
+        "website": "https://www.glutentag.cat/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1583207,
+          41.4017843
+        ]
+      },
+      "id": "node/12708357588"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13020263765",
+        "amenity": "restaurant",
+        "cuisine": "bakery;cafe;cake;diner;breakfast;brunch;italian;ice_cream",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "limited",
+        "diet:sugar_free": "limited",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "name": "Yummy Brunch",
+        "opening_hours": "08:30-23:00",
+        "toilets": "yes",
+        "toilets:access": "customers",
+        "toilets:fee": "no",
+        "toilets:gender_segregated": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.5265057,
+          36.5915542
+        ]
+      },
+      "id": "node/13020263765"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13077884559",
+        "check_date": "2026-01-05",
+        "contact:instagram": "https://www.instagram.com/lamardecookies",
+        "diet:gluten_free": "only",
+        "diet:lactose_free": "only",
+        "level": "0",
+        "name": "La Mar de Cookies",
+        "shop": "bakery"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8913748,
+          41.6451458
+        ]
+      },
+      "id": "node/13077884559"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13165944901",
+        "addr:city": "Costa Adeje",
+        "addr:housenumber": "25",
+        "addr:postcode": "38660",
+        "addr:street": "Avenida de España",
+        "addr:unit": "209",
+        "amenity": "cafe",
+        "contact:instagram": "https://www.instagram.com/inneryou.vegan",
+        "diet:gluten_free": "only",
+        "diet:sugar_free": "yes",
+        "diet:vegan": "only",
+        "email": "contact@inneryoucafe.com",
+        "name": "Inner you",
+        "opening_hours": "Mo off; Tu-Th 13:00-16:00; Fr off; Sa 12:00-15:00; Su off",
+        "phone": "+34711055312",
+        "website": "https://www.inneryoucafe.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.734573,
+          28.0797301
+        ]
+      },
+      "id": "node/13165944901"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13416055241",
+        "description": "Pastries, cakes, bread only gluten-free",
+        "diet:gluten_free": "only",
+        "name": "Pastisseria Artesana Lluis Febrer",
+        "shop": "pastry",
+        "website": "https://www.pastisseriartesana.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.0106865,
+          39.981781
+        ]
+      },
+      "id": "node/13416055241"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13484640618",
+        "diet:gluten_free": "only",
+        "shop": "convenience"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.4546073,
+          36.8503567
+        ]
+      },
+      "id": "node/13484640618"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13587181532",
+        "amenity": "restaurant",
+        "cuisine": "spanish",
+        "delivery": "no",
+        "diet:gluten_free": "only",
+        "indoor_seating": "yes",
+        "kids_area": "no",
+        "name": "MalaBarraka",
+        "opening_hours": "We-Th 13:00-16:00; Fr 13:00-16:00, 20:30-23:30; Sa 20:30-23:30; Su 13:00-16:00",
+        "outdoor_seating": "no",
+        "payment:cards": "yes",
+        "payment:cash": "yes",
+        "payment:qr_code": "no",
+        "phone": "+34 608 28 96 42",
+        "reservation": "yes",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.instagram.com/malabarraca/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.7042532,
+          38.2677463
+        ]
+      },
+      "id": "node/13587181532"
+    }
+  ]
+}
