@@ -106,6 +106,8 @@ header {
 
 .logo {
   display: flex; align-items: center; gap: 7px; flex-shrink: 0;
+  cursor: pointer; user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .logo-icon { font-size: 19px; line-height: 1; }
 .logo-text {
@@ -331,6 +333,149 @@ header {
 .overlay.active { display: block; }
 
 /* ══════════════════════════════════════
+   LANDING PAGE
+══════════════════════════════════════ */
+#landing {
+  position: fixed; inset: 0; z-index: 2000;
+  background: var(--bg);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 2rem; text-align: center;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  overflow: hidden;
+}
+#landing::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 50%, rgba(245,166,35,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% 40%, rgba(232,82,10,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+#landing::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(245,166,35,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+#landing.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.98);
+}
+
+.landing-inner {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; gap: 0;
+  max-width: 520px; width: 100%;
+  animation: fadeUp 0.7s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo */
+.landing-logo {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 1.8rem;
+}
+.landing-logo-icon {
+  font-size: 42px; line-height: 1;
+  filter: drop-shadow(0 0 18px rgba(245,166,35,0.5));
+}
+.landing-logo-text {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 34px; color: var(--text); line-height: 1;
+  letter-spacing: -1px;
+}
+.landing-logo-text span { color: var(--accent); }
+
+/* Título */
+.landing-title {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: clamp(18px, 4vw, 26px);
+  color: var(--text); line-height: 1.25;
+  margin-bottom: 0.6rem; max-width: 460px;
+}
+.landing-sub {
+  font-size: 14px; color: var(--text-muted);
+  margin-bottom: 1.6rem; max-width: 400px; line-height: 1.65;
+}
+
+/* Stats pills */
+.landing-stats {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  justify-content: center; margin-bottom: 1.6rem;
+}
+.stat-pill {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 40px; padding: 10px 18px;
+  display: flex; flex-direction: column; align-items: center;
+  transition: border-color 0.2s;
+}
+.stat-pill:hover { border-color: var(--accent); }
+.stat-pill strong {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 20px; color: var(--accent); line-height: 1;
+}
+.stat-pill small {
+  font-size: 10px; color: var(--text-muted);
+  margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+/* Features */
+.landing-features {
+  display: flex; gap: 18px; flex-wrap: wrap;
+  justify-content: center; margin-bottom: 1.8rem;
+}
+.feat {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--text-muted);
+}
+.feat-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(245,166,35,0.6);
+}
+
+/* CTA button */
+.btn-cta {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  color: white; border: none; border-radius: 12px;
+  padding: 15px 42px; font-size: 16px; font-weight: 600;
+  font-family: 'Syne', sans-serif; cursor: pointer;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 24px rgba(245,166,35,0.35), 0 0 0 0 rgba(245,166,35,0.3);
+  transition: transform 0.15s, box-shadow 0.2s, opacity 0.15s;
+  margin-bottom: 1rem;
+}
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(245,166,35,0.45), 0 0 0 4px rgba(245,166,35,0.12);
+}
+.btn-cta:active { transform: translateY(0); opacity: 0.9; }
+
+.landing-note {
+  font-size: 11px; color: var(--text-dim);
+}
+.landing-note strong { color: var(--text-muted); }
+
+/* ══════════════════════════════════════
+   LANDING RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 600px) {
+  .landing-logo-icon { font-size: 34px; }
+  .landing-logo-text { font-size: 27px; }
+  .landing-stats { gap: 7px; }
+  .stat-pill strong { font-size: 17px; }
+  .landing-features { gap: 12px; }
+  .btn-cta { padding: 13px 32px; font-size: 15px; }
+}
+
+/* ══════════════════════════════════════
    TABLET  (600px – 900px)
 ══════════════════════════════════════ */
 @media (max-width: 900px) {
@@ -425,13 +570,50 @@ header {
 </head>
 <body>
 
+<!-- ══ LANDING ══ -->
+<div id="landing">
+  <div class="landing-inner">
+    <div class="landing-logo">
+      <div class="landing-logo-icon">📬</div>
+      <div class="landing-logo-text">Buzones<span>ESP</span></div>
+    </div>
+    <div class="landing-title">Encuentra cualquier buzón de Correos en España</div>
+    <div class="landing-sub">
+      Mapa interactivo con <strong style="color:var(--accent)">11.175 buzones</strong> geolocalizados.
+      Filtra por provincia, consulta horarios de recogida y abre en Google Maps con un clic.
+    </div>
+    <div class="landing-stats">
+      <div class="stat-pill">
+        <strong>11.175</strong>
+        <small>Buzones</small>
+      </div>
+      <div class="stat-pill">
+        <strong>52</strong>
+        <small>Provincias</small>
+      </div>
+      <div class="stat-pill">
+        <strong>Gratis</strong>
+        <small>Sin registro</small>
+      </div>
+    </div>
+    <div class="landing-features">
+      <div class="feat"><div class="feat-dot"></div>Filtro por provincia</div>
+      <div class="feat"><div class="feat-dot"></div>Horarios de recogida</div>
+      <div class="feat"><div class="feat-dot"></div>Clústeres inteligentes</div>
+      <div class="feat"><div class="feat-dot"></div>Abre en Google Maps</div>
+    </div>
+    <button class="btn-cta" onclick="abrirApp()">Ver el mapa →</button>
+    <div class="landing-note">Actualizado · <strong>Toda España</strong> · Sin registro</div>
+  </div>
+</div>
+
 <div id="loading">
   <div class="spinner"></div>
   <div style="font-size:13px;color:var(--text-muted)">Cargando 11.175 buzones...</div>
 </div>
 
 <header>
-  <div class="logo">
+  <div class="logo" onclick="volverInicio()" title="Inicio">
     <div class="logo-icon">📬</div>
     <div class="logo-text">Buzones<span>ESP</span></div>
   </div>
@@ -580,7 +762,7 @@ function toggleSidebar() {
   if (!sidebar) return;
   const isOpen = sidebar.classList.toggle('open');
   if (overlay) overlay.classList.toggle('active', isOpen);
-  if (btn)     btn.textContent = isOpen ? '✕' : '☰';
+  if (btn)     btn.innerHTML = isOpen ? '✕' : '☰';
   setTimeout(function() { map.invalidateSize(); }, 350);
 }
 
@@ -709,9 +891,36 @@ function closeSV() {
   if (elMob) elMob.textContent = num;
 })();
 
+// ── LANDING ──────────────────────────────────────────────────────────────────
+function abrirApp() {
+  const landing = document.getElementById('landing');
+  landing.classList.add('hide');
+  setTimeout(() => { landing.style.display = 'none'; }, 520);
+}
+
+function volverInicio() {
+  const landing = document.getElementById('landing');
+  landing.style.display = 'flex';
+  // Forzar reflow para que la transición funcione
+  landing.offsetHeight;
+  landing.classList.remove('hide');
+}
+
 // ── ARRANQUE ──────────────────────────────────────────────────────────────────
 filtrar();
 document.getElementById('loading').style.display = 'none';
+
+window.addEventListener('resize', function() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('overlay');
+  const btn     = document.getElementById('btn-toggle');
+  if (window.innerWidth > 900 && sidebar && sidebar.classList.contains('open')) {
+    sidebar.classList.remove('open');
+    if (overlay) overlay.classList.remove('active');
+    if (btn)     btn.innerHTML = '☰';
+    if (map)     map.invalidateSize();
+  }
+});
 </script>
 </body>
 </html>
