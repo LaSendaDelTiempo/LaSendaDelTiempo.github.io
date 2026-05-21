@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ SEO PRIMARIO ═══ -->
+<title>Quien Busca Encuentra · Mapas interactivos gratis para España</title>
+<meta name="description" content="Mapas interactivos gratuitos para España. Encuentra buzones de Correos cerca de ti y establecimientos sin gluten: restaurantes, tiendas y panaderías para celíacos. Sin registro.">
+<meta name="keywords" content="buzones correos cerca, mapa buzones correos españa, donde hay un buzon de correos, restaurantes sin gluten españa, mapa sin gluten españa, establecimientos celiacos, buzon correos cerca de mi, sin gluten cerca de mi, mapas interactivos españa, gluten free españa, correos buzon mapa">
+<meta name="author" content="QuienBuscaEncuentra">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="language" content="es">
+<meta name="geo.region" content="ES">
+<meta name="geo.country" content="Spain">
+<link rel="canonical" href="https://lasendadeltiempo.github.io/">
+
+<!-- ═══ OPEN GRAPH ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="QuienBuscaEncuentra">
+<meta property="og:title" content="Quien Busca Encuentra · Buzones de Correos y Sin Gluten en España">
+<meta property="og:description" content="Mapas interactivos gratuitos para España. 11.175 buzones de Correos y 6.629 establecimientos sin gluten. Sin registro, sin anuncios.">
+<meta property="og:url" content="https://lasendadeltiempo.github.io/">
+<meta property="og:image" content="https://lasendadeltiempo.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- ═══ TWITTER / X CARD ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quien Busca Encuentra · Mapas interactivos España">
+<meta name="twitter:description" content="11.175 buzones de Correos y 6.629 establecimientos sin gluten en España. Gratis y sin registro.">
+<meta name="twitter:image" content="https://lasendadeltiempo.github.io/og-image.jpg">
+
+<!-- ═══ STRUCTURED DATA — JSON-LD ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Quien Busca Encuentra",
+  "url": "https://lasendadeltiempo.github.io/",
+  "description": "Mapas interactivos gratuitos para España. Buzones de Correos y establecimientos sin gluten.",
+  "inLanguage": "es",
+  "hasPart": [
+    {
+      "@type": "WebApplication",
+      "name": "BuzonesESP — Mapa de buzones de Correos en España",
+      "url": "https://lasendadeltiempo.github.io/buzones/",
+      "description": "Mapa interactivo con 11.175 buzones de Correos en España.",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "GlutenFreeESP — Establecimientos sin gluten en España",
+      "url": "https://lasendadeltiempo.github.io/glutenfree/",
+      "description": "Mapa interactivo con 6.629 establecimientos sin gluten en España.",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MZ6DBFK77S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MZ6DBFK77S');
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #080909;
+  --bg2:       #0f1010;
+  --surface:   #111313;
+  --surface2:  #181a1a;
+  --border:    #1e2222;
+  --border2:   #252a2a;
+  --text:      #e8eded;
+  --text-sub:  #8a9090;
+  --text-dim:  #3a4040;
+  --amber:     #f5a623;
+  --amber-d:   #c07a0a;
+  --amber-l:   rgba(245,166,35,0.08);
+  --green:     #2d7a3a;
+  --green-b:   #4caf50;
+  --green-l:   rgba(45,122,58,0.1);
+  --radius-lg: 24px;
+  --radius-md: 14px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ══════════════════════════════════════════
+   FONDO — malla topográfica animada
+══════════════════════════════════════════ */
+.bg-canvas {
+  position: fixed; inset: 0; z-index: 0;
+  overflow: hidden; pointer-events: none;
+}
+.bg-canvas svg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  opacity: 0.035;
+}
+.bg-glow-amber {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
+  top: -200px; right: -100px;
+  animation: driftA 18s ease-in-out infinite alternate;
+}
+.bg-glow-green {
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45,122,58,0.1) 0%, transparent 70%);
+  bottom: -100px; left: -150px;
+  animation: driftB 22s ease-in-out infinite alternate;
+}
+@keyframes driftA {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(-80px, 60px) scale(1.15); }
+}
+@keyframes driftB {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(60px, -40px) scale(1.2); }
+}
+
+/* ══════════════════════════════════════════
+   LAYOUT
+══════════════════════════════════════════ */
+.page {
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem 5rem;
+}
+
+/* ══════════════════════════════════════════
+   NAV
+══════════════════════════════════════════ */
+.nav {
+  width: 100%; max-width: 900px;
+  display: flex; align-items: center;
+  padding: 1.8rem 0 0;
+  margin-bottom: 0;
+  animation: slideDown 0.5s ease both;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-sub);
+  text-decoration: none;
+}
+.nav-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 10px var(--amber);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 6px var(--amber); }
+  50%      { box-shadow: 0 0 16px var(--amber), 0 0 30px rgba(245,166,35,0.3); }
+}
+.nav-pill {
+  margin-left: auto;
+  font-size: 10px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--text-dim);
+  border: 1px solid var(--border2);
+  border-radius: 20px; padding: 5px 12px;
+}
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+.hero {
+  width: 100%; max-width: 900px;
+  text-align: center;
+  padding: 5rem 0 3.5rem;
+}
+.hero-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Syne', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--text-dim);
+  border: 1px solid var(--border2);
+  border-radius: 20px; padding: 6px 16px;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.6s 0.1s ease both; opacity: 0;
+}
+.hero-label-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--amber);
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(42px, 8vw, 88px);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.7s 0.2s ease both; opacity: 0;
+}
+.hero-title .line1 { display: block; color: var(--text); }
+.hero-title .line2 {
+  display: block;
+  background: linear-gradient(90deg, var(--amber) 0%, #ff8c42 50%, var(--green-b) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 100%;
+  animation: fadeUp 0.7s 0.2s ease both, gradShift 6s 1s ease-in-out infinite alternate;
+  opacity: 0;
+}
+@keyframes gradShift {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+.hero-sub {
+  font-size: 16px; color: var(--text-sub); line-height: 1.7;
+  max-width: 460px; margin: 0 auto 1.5rem;
+  animation: fadeUp 0.7s 0.35s ease both; opacity: 0;
+}
+
+/* ── STATS GLOBALES ── */
+.hero-stats {
+  display: inline-flex; align-items: center; gap: 0;
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 0;
+  animation: fadeUp 0.7s 0.45s ease both; opacity: 0;
+}
+.hstat {
+  padding: 12px 22px;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+}
+.hstat + .hstat { border-left: 1px solid var(--border2); }
+.hstat-n {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 19px; letter-spacing: -0.5px;
+  line-height: 1;
+}
+.hstat-n.amber { color: var(--amber); }
+.hstat-n.green { color: var(--green-b); }
+.hstat-n.white { color: var(--text); }
+.hstat-l {
+  font-size: 9px; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--text-dim);
+}
+
+/* ══════════════════════════════════════════
+   SEPARADOR
+══════════════════════════════════════════ */
+.divider {
+  width: 100%; max-width: 900px;
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.7s 0.5s ease both; opacity: 0;
+}
+.divider-line { flex: 1; height: 1px; background: var(--border); }
+.divider-txt {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-dim); white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════
+   CARDS — GRID
+══════════════════════════════════════════ */
+.cards {
+  width: 100%; max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  animation: fadeUp 0.7s 0.55s ease both; opacity: 0;
+}
+
+/* ══════════════════════════════════════════
+   CARD BASE
+══════════════════════════════════════════ */
+.card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2rem 1.8rem;
+  text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(.22,.68,0,1.2),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Gradiente lateral que aparece en hover */
+.card::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: var(--radius-lg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.card:hover { transform: translateY(-6px); }
+.card:hover::after { opacity: 1; }
+
+/* Línea superior de acento */
+.card::before {
+  content: '';
+  position: absolute; top: 0; left: 2rem; right: 2rem;
+  height: 2px; border-radius: 0 0 4px 4px;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.card:hover::before { opacity: 1; }
+
+/* ── BUZONES ── */
+.card-buzones {
+  --ca: #f5a623; --cb: #e8520a; --cg: rgba(245,166,35,0.06);
+}
+.card-buzones::after {
+  background: radial-gradient(ellipse 100% 80% at 5% 5%,
+    rgba(245,166,35,0.07) 0%, transparent 60%);
+}
+.card-buzones::before { background: linear-gradient(90deg, var(--amber), var(--cb)); }
+.card-buzones:hover {
+  border-color: rgba(245,166,35,0.3);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(245,166,35,0.06);
+}
+
+/* ── GLUTEN ── */
+.card-gluten {
+  --ca: #4caf50; --cb: #2d7a3a; --cg: rgba(45,122,58,0.08);
+}
+.card-gluten::after {
+  background: radial-gradient(ellipse 100% 80% at 5% 5%,
+    rgba(45,122,58,0.09) 0%, transparent 60%);
+}
+.card-gluten::before { background: linear-gradient(90deg, var(--green-b), var(--green)); }
+.card-gluten:hover {
+  border-color: rgba(76,175,80,0.3);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(45,122,58,0.07);
+}
+
+/* ── CARD HEADER ── */
+.card-header {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 12px;
+  margin-bottom: 1.5rem;
+}
+.card-icon-wrap {
+  width: 52px; height: 52px; border-radius: 14px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+  transition: transform 0.3s cubic-bezier(.22,.68,0,1.2);
+  flex-shrink: 0;
+}
+.card:hover .card-icon-wrap { transform: scale(1.1) rotate(-4deg); }
+
+.card-badge {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--ca);
+  background: color-mix(in srgb, var(--ca) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ca) 20%, transparent);
+  border-radius: 20px; padding: 4px 10px;
+  align-self: flex-start;
+}
+
+/* ── NOMBRE ── */
+.card-name {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 26px; letter-spacing: -0.8px; line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.card-name em { color: var(--ca); font-style: normal; }
+
+/* ── DESCRIPCIÓN ── */
+.card-desc {
+  font-size: 13px; color: var(--text-sub); line-height: 1.65;
+  margin-bottom: 1.4rem; flex: 1;
+}
+
+/* ── STATS INTERNOS ── */
+.card-stats {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+.cstat {
+  flex: 1; min-width: 70px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex; flex-direction: column; gap: 3px;
+  transition: border-color 0.3s;
+}
+.card:hover .cstat { border-color: color-mix(in srgb, var(--ca) 20%, transparent); }
+.cstat-n {
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 17px; color: var(--ca); line-height: 1;
+}
+.cstat-l {
+  font-size: 9px; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+/* ── FEATURE TAGS ── */
+.card-feats {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 1.6rem;
+}
+.feat {
+  font-size: 11px; color: var(--text-sub);
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 20px; padding: 4px 10px;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.card:hover .feat {
+  color: var(--ca);
+  border-color: color-mix(in srgb, var(--ca) 18%, transparent);
+  background: color-mix(in srgb, var(--ca) 5%, transparent);
+}
+
+/* ── CTA ── */
+.card-cta {
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(135deg, var(--ca) 0%, var(--cb) 100%);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 14px; color: #fff;
+  letter-spacing: 0.2px;
+  transition: opacity 0.2s, transform 0.2s;
+  position: relative; overflow: hidden;
+}
+.card-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  opacity: 0; transition: opacity 0.2s;
+}
+.card:hover .card-cta::before { opacity: 1; }
+.card-cta-arr {
+  font-size: 18px;
+  transition: transform 0.25s cubic-bezier(.22,.68,0,1.5);
+}
+.card:hover .card-cta-arr { transform: translateX(5px); }
+
+/* ══════════════════════════════════════════
+   CARRUSEL SEO
+══════════════════════════════════════════ */
+.carousel-section {
+  width: 100%; max-width: 900px;
+  margin-top: 16px;
+  animation: fadeUp 0.7s 0.62s ease both; opacity: 0;
+}
+.carousel-label {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 10px; padding-left: 2px;
+}
+.carousel-label-amber { color: var(--amber); }
+.carousel-label-green { color: var(--green-b); }
+.carousel-sep { color: var(--text-dim); }
+
+.carousel-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.carousel-wrap:hover .carousel-track { animation-play-state: paused; }
+
+.carousel-track {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  padding: 6px 0;
+  animation: scrollLeft 65s linear infinite;
+}
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ctag {
+  display: inline-flex; align-items: center; gap: 7px;
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 500;
+  border-radius: 20px;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid;
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+.ctag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+.ctag-ico { font-size: 13px; line-height: 1; }
+
+.ctag-amber {
+  color: #d4900a;
+  background: rgba(245,166,35,0.07);
+  border-color: rgba(245,166,35,0.2);
+}
+.ctag-amber:hover {
+  background: rgba(245,166,35,0.13);
+  border-color: rgba(245,166,35,0.4);
+  color: var(--amber);
+}
+.ctag-green {
+  color: #3d9c42;
+  background: rgba(76,175,80,0.07);
+  border-color: rgba(76,175,80,0.2);
+}
+.ctag-green:hover {
+  background: rgba(76,175,80,0.13);
+  border-color: rgba(76,175,80,0.4);
+  color: var(--green-b);
+}
+
+/* ══════════════════════════════════════════
+   SECCIÓN INFO — DEBAJO DE LAS CARDS
+══════════════════════════════════════════ */
+.info-grid {
+  width: 100%; max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+  animation: fadeUp 0.7s 0.65s ease both; opacity: 0;
+}
+
+.info-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 1.8rem;
+}
+.info-block-title {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.info-block-title.amber { color: var(--amber); }
+.info-block-title.green { color: var(--green-b); }
+
+.info-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.info-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; color: var(--text-sub); line-height: 1.5;
+}
+.info-list li::before {
+  content: '';
+  width: 5px; height: 5px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 6px;
+}
+.info-list.amber li::before { background: var(--amber); }
+.info-list.green  li::before { background: var(--green-b); }
+
+/* ── BLOQUE FAQ ── */
+.faq-section {
+  width: 100%; max-width: 900px;
+  margin-top: 16px;
+  animation: fadeUp 0.7s 0.75s ease both; opacity: 0;
+}
+.faq-title {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-dim); margin-bottom: 10px;
+  padding-left: 2px;
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.3rem;
+  transition: border-color 0.2s;
+  cursor: default;
+}
+.faq-item:hover { border-color: var(--border2); }
+.faq-q {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 12px; color: var(--text);
+  margin-bottom: 0.4rem; line-height: 1.35;
+}
+.faq-a {
+  font-size: 12px; color: var(--text-sub); line-height: 1.55;
+}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+.footer {
+  width: 100%; max-width: 900px;
+  margin-top: 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  animation: fadeUp 0.7s 0.85s ease both; opacity: 0;
+}
+.footer-brand {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 13px; color: var(--text-dim);
+  letter-spacing: 0.3px;
+}
+.footer-links {
+  display: flex; gap: 6px;
+}
+.footer-pill {
+  font-size: 10px; color: var(--text-dim);
+  border: 1px solid var(--border); border-radius: 20px;
+  padding: 3px 10px;
+}
+
+/* ══════════════════════════════════════════
+   ANIMACIONES
+══════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 700px) {
+  .page { padding: 0 1rem 4rem; }
+  .hero { padding: 3.5rem 0 2.5rem; }
+  .hero-title { font-size: clamp(36px, 10vw, 60px); letter-spacing: -2px; }
+  .cards { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-wrap: wrap; border-radius: 14px; }
+  .footer { flex-direction: column; gap: 10px; text-align: center; }
+  .card { padding: 1.5rem; }
+  .info-block { padding: 1.3rem 1.4rem; }
+}
+@media (max-width: 480px) {
+  .nav-pill { display: none; }
+  .hstat { padding: 10px 14px; }
+  .hstat-n { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Fondo -->
+<div class="bg-canvas">
+  <svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <!-- Líneas topográficas simuladas -->
+    <path d="M0,450 Q180,380 360,420 T720,390 T1080,430 T1440,400" fill="none" stroke="white" stroke-width="1"/>
+    <path d="M0,470 Q180,400 360,440 T720,410 T1080,450 T1440,420" fill="none" stroke="white" stroke-width="0.8"/>
+    <path d="M0,490 Q180,420 360,460 T720,430 T1080,470 T1440,440" fill="none" stroke="white" stroke-width="0.6"/>
+    <path d="M0,510 Q180,440 360,480 T720,450 T1080,490 T1440,460" fill="none" stroke="white" stroke-width="0.5"/>
+    <path d="M0,530 Q180,460 360,500 T720,470 T1080,510 T1440,480" fill="none" stroke="white" stroke-width="0.4"/>
+    <path d="M0,430 Q180,360 360,400 T720,370 T1080,410 T1440,380" fill="none" stroke="white" stroke-width="0.8"/>
+    <path d="M0,410 Q180,340 360,380 T720,350 T1080,390 T1440,360" fill="none" stroke="white" stroke-width="0.6"/>
+    <path d="M0,390 Q200,320 400,360 T800,340 T1200,370 T1440,345" fill="none" stroke="white" stroke-width="0.4"/>
+    <!-- Grid sutil -->
+    <line x1="0" y1="0" x2="0" y2="900" stroke="white" stroke-width="0.3" stroke-dasharray="4 28"/>
+    <line x1="240" y1="0" x2="240" y2="900" stroke="white" stroke-width="0.3" stroke-dasharray="4 28"/>
+    <line x1="480" y1="0" x2="480" y2="900" stroke="white" stroke-width="0.3" stroke-dasharray="4 28"/>
+    <line x1="720" y1="0" x2="720" y2="900" stroke="white" stroke-width="0.3" stroke-dasharray="4 28"/>
+    <line x1="960" y1="0" x2="960" y2="900" stroke="white" stroke-width="0.3" stroke-dasharray="4 28"/>
+    <line x1="1200" y1="0" x2="1200" y2="900" stroke="white" stroke-width="0.3" stroke-dasharray="4 28"/>
+    <line x1="1440" y1="0" x2="1440" y2="900" stroke="white" stroke-width="0.3" stroke-dasharray="4 28"/>
+  </svg>
+  <div class="bg-glow-amber"></div>
+  <div class="bg-glow-green"></div>
+</div>
+
+<div class="page">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a class="nav-brand" href="#">
+      <div class="nav-dot"></div>
+      QuienBuscaEncuentra
+    </a>
+    <div class="nav-pill">España · 2 mapas</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-label">
+      <div class="hero-label-dot"></div>
+      Mapas interactivos · España · Gratis
+    </div>
+    <h1 class="hero-title">
+      <span class="line1">Quien Busca</span>
+      <span class="line2">Encuentra</span>
+    </h1>
+    <p class="hero-sub">
+      Dos mapas interactivos para España. Sin registro, sin anuncios, sin complicaciones.
+    </p>
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-n amber">11.175</div>
+        <div class="hstat-l">Buzones</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n green">6.629</div>
+        <div class="hstat-l">Sin gluten</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n white">52</div>
+        <div class="hstat-l">Provincias</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-n white">0€</div>
+        <div class="hstat-l">Coste</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEPARADOR -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-txt">Elige tu mapa</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- CARDS — no tocar los enlaces ni la estructura de anchor -->
+  <div class="cards">
+
+    <!-- BUZONES -->
+    <a class="card card-buzones" href="https://lasendadeltiempo.github.io/buzones/" target="_blank" rel="noopener">
+      <div class="card-header">
+        <div class="card-icon-wrap">📬</div>
+        <div class="card-badge">Buzones · España</div>
+      </div>
+      <div class="card-name">Buzones<em>ESP</em></div>
+      <div class="card-desc">
+        Localiza cualquier buzón de Correos en España. Filtra por provincia, consulta el horario de recogida y ábrelo en Google Maps con un solo clic.
+      </div>
+      <div class="card-stats">
+        <div class="cstat">
+          <div class="cstat-n">11.175</div>
+          <div class="cstat-l">Buzones</div>
+        </div>
+        <div class="cstat">
+          <div class="cstat-n">52</div>
+          <div class="cstat-l">Provincias</div>
+        </div>
+        <div class="cstat">
+          <div class="cstat-n">Gratis</div>
+          <div class="cstat-l">Sin registro</div>
+        </div>
+      </div>
+      <div class="card-feats">
+        <span class="feat">Filtro por provincia</span>
+        <span class="feat">Horarios de recogida</span>
+        <span class="feat">Clústeres</span>
+        <span class="feat">Google Maps</span>
+        <span class="feat">Vista satélite</span>
+      </div>
+      <div class="card-cta">
+        Ver el mapa de buzones
+        <span class="card-cta-arr">→</span>
+      </div>
+    </a>
+
+    <!-- GLUTEN FREE -->
+    <a class="card card-gluten" href="https://lasendadeltiempo.github.io/glutenfree/" target="_blank" rel="noopener">
+      <div class="card-header">
+        <div class="card-icon-wrap">🌾</div>
+        <div class="card-badge">Sin gluten · España</div>
+      </div>
+      <div class="card-name">GlutenFree<em>ESP</em></div>
+      <div class="card-desc">
+        Encuentra restaurantes, hoteles, tiendas y panaderías sin gluten en toda España. Verificados y clasificados por tipo de establecimiento.
+      </div>
+      <div class="card-stats">
+        <div class="cstat">
+          <div class="cstat-n">6.629</div>
+          <div class="cstat-l">Lugares</div>
+        </div>
+        <div class="cstat">
+          <div class="cstat-n">529</div>
+          <div class="cstat-l">100% s/g</div>
+        </div>
+        <div class="cstat">
+          <div class="cstat-n">Gratis</div>
+          <div class="cstat-l">Sin registro</div>
+        </div>
+      </div>
+      <div class="card-feats">
+        <span class="feat">Restaurantes</span>
+        <span class="feat">Hoteles</span>
+        <span class="feat">Tiendas</span>
+        <span class="feat">Panaderías</span>
+        <span class="feat">Filtro por tipo</span>
+      </div>
+      <div class="card-cta">
+        Ver el mapa sin gluten
+        <span class="card-cta-arr">→</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- CARRUSEL SEO — asociaciones y fuentes oficiales -->
+  <div class="carousel-section">
+    <div class="carousel-label">
+      <span class="carousel-label-amber">📬 Correos oficiales</span>
+      <span class="carousel-sep">·</span>
+      <span class="carousel-label-green">🌾 Asociaciones celíacos</span>
+      <span class="carousel-sep">·</span>
+      <span style="color:var(--text-dim)">Fuentes y recursos</span>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel-track">
+
+        <!-- CORREOS / BUZONES -->
+        <a class="ctag ctag-amber" href="https://www.correos.es" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Web oficial
+        </a>
+        <!-- ASOCIACIONES CELÍACOS -->
+        <a class="ctag ctag-green" href="https://www.celiacos.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>FACE — Federación nacional celíacos
+        </a>
+        <a class="ctag ctag-amber" href="https://www.correos.es/es/es/particulares/envios-y-paqueteria/envia/cartas-y-documentos" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Envío de cartas
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacscatalunya.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>Celíacs de Catalunya
+        </a>
+        <a class="ctag ctag-amber" href="https://www.correos.es/es/es/herramientas/oficinas-buzones-y-citaportal/detalle" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Buscador de buzones
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosaragon.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACA — Celíacos de Aragón
+        </a>
+        <a class="ctag ctag-amber" href="https://www.correos.es/es/es/herramientas/oficinas-buzones-y-citaportal/detalle" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Oficinas y horarios
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosandalucia.es" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>FACA — Celíacos de Andalucía
+        </a>
+        <a class="ctag ctag-amber" href="https://www.correos.es/es/es/herramientas/calculadora-de-precios" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Calculadora de precios
+        </a>
+        <a class="ctag ctag-green" href="https://www.acecova.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACECOVA — C. Valenciana
+        </a>
+        <a class="ctag ctag-amber" href="https://www.correos.es/es/es/herramientas/seguimiento" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Seguimiento de envíos
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosgalicia.es" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>Celíacos de Galicia
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacoseuskadi.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>Celíacos de Euskadi
+        </a>
+        <a class="ctag ctag-green" href="https://www.acecale.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACECALE — Castilla y León
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosnavarra.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>Celíacos de Navarra
+        </a>
+        <a class="ctag ctag-green" href="https://www.aceri.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACERI — Celíacos La Rioja
+        </a>
+        <a class="ctag ctag-green" href="https://www.asociacionceliacosasturias.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>Celíacos de Asturias
+        </a>
+        <a class="ctag ctag-green" href="https://www.aceliamu.es" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACELIAMU — Murcia
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosbaleares.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACIB — Islas Baleares
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosmancha.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACCLM — Castilla-La Mancha
+        </a>
+        <a class="ctag ctag-green" href="https://www.acecan.es" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACECAN — Cantabria
+        </a>
+
+        <!-- DUPLICADO para loop infinito -->
+        <a class="ctag ctag-amber" href="https://www.correos.es" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Web oficial
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacos.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>FACE — Federación nacional celíacos
+        </a>
+        <a class="ctag ctag-amber" href="https://www.correos.es/es/es/particulares/envios-y-paqueteria/envia/cartas-y-documentos" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Envío de cartas
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacscatalunya.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>Celíacs de Catalunya
+        </a>
+        <a class="ctag ctag-amber" href="https://www.correos.es/es/es/herramientas/oficinas-buzones-y-citaportal/detalle" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Buscador de buzones
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosaragon.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACA — Celíacos de Aragón
+        </a>
+        <a class="ctag ctag-amber" href="https://www.correos.es/es/es/herramientas/oficinas-buzones-y-citaportal/detalle" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Oficinas y horarios
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosandalucia.es" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>FACA — Celíacos de Andalucía
+        </a>
+        <a class="ctag ctag-amber" href="https://www.correos.es/es/es/herramientas/calculadora-de-precios" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Calculadora de precios
+        </a>
+        <a class="ctag ctag-green" href="https://www.acecova.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACECOVA — C. Valenciana
+        </a>
+        <a class="ctag ctag-amber" href="https://www.correos.es/es/es/herramientas/seguimiento" target="_blank" rel="noopener">
+          <span class="ctag-ico">📬</span>Correos — Seguimiento de envíos
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosgalicia.es" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>Celíacos de Galicia
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacoseuskadi.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>Celíacos de Euskadi
+        </a>
+        <a class="ctag ctag-green" href="https://www.acecale.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACECALE — Castilla y León
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosnavarra.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>Celíacos de Navarra
+        </a>
+        <a class="ctag ctag-green" href="https://www.aceri.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACERI — Celíacos La Rioja
+        </a>
+        <a class="ctag ctag-green" href="https://www.asociacionceliacosasturias.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>Celíacos de Asturias
+        </a>
+        <a class="ctag ctag-green" href="https://www.aceliamu.es" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACELIAMU — Murcia
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosbaleares.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACIB — Islas Baleares
+        </a>
+        <a class="ctag ctag-green" href="https://www.celiacosmancha.org" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACCLM — Castilla-La Mancha
+        </a>
+        <a class="ctag ctag-green" href="https://www.acecan.es" target="_blank" rel="noopener">
+          <span class="ctag-ico">🌾</span>ACECAN — Cantabria
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO DETALLADA POR MAPA -->
+  <div class="info-grid">
+
+    <div class="info-block">
+      <div class="info-block-title amber">📬 Qué incluye BuzonesESP</div>
+      <ul class="info-list amber">
+        <li>Más de 11.000 buzones de Correos geolocalizados en todo el territorio nacional</li>
+        <li>Horarios de recogida para planificar tu envío con tiempo</li>
+        <li>Filtro por provincia para afinar la búsqueda en segundos</li>
+        <li>Clústeres inteligentes: el mapa no se satura aunque haya miles de puntos</li>
+        <li>Enlace directo a Google Maps para obtener ruta desde tu ubicación</li>
+        <li>Vista de satélite para identificar el buzón con precisión</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <div class="info-block-title green">🌾 Qué incluye GlutenFreeESP</div>
+      <ul class="info-list green">
+        <li>Más de 6.600 establecimientos verificados aptos para celíacos en España</li>
+        <li>529 locales con menú 100% sin gluten, sin riesgo de contaminación cruzada</li>
+        <li>Cuatro categorías: restaurantes, hoteles, tiendas especializadas y panaderías</li>
+        <li>Filtro por tipo de establecimiento y por provincia para búsquedas precisas</li>
+        <li>Ficha de cada lugar con dirección, teléfono y enlace a web cuando disponible</li>
+        <li>Listado de asociaciones de celíacos por comunidad autónoma</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FAQs -->
+  <div class="faq-section">
+    <div class="faq-title">Preguntas frecuentes</div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">¿Hace falta registrarse?</div>
+        <div class="faq-a">No. Ambos mapas son completamente gratuitos y funcionan sin cuenta ni registro de ningún tipo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Los datos están actualizados?</div>
+        <div class="faq-a">Los datos proceden de fuentes públicas y se actualizan periódicamente. Recomendamos verificar siempre in situ antes de desplazarte.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Funciona en el móvil?</div>
+        <div class="faq-a">Sí. Ambas aplicaciones están optimizadas para móvil y tablet, sin necesidad de instalar nada.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cómo busco mi provincia?</div>
+        <div class="faq-a">En cada mapa hay un filtro lateral por provincia. Selecciónala y el mapa se centra automáticamente en esa área.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Qué significa "100% sin gluten"?</div>
+        <div class="faq-a">Locales donde toda la carta es apta para celíacos, eliminando el riesgo de contaminación cruzada en cocina.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Puedo sugerir un establecimiento?</div>
+        <div class="faq-a">Por ahora los datos son de fuentes abiertas oficiales. Si detectas un error o quieres proponer un lugar, contacta a través de GitHub.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">Quien Busca Encuentra · lasendadeltiempo.github.io</div>
+    <div class="footer-links">
+      <div class="footer-pill">Gratis</div>
+      <div class="footer-pill">Sin registro</div>
+      <div class="footer-pill">Datos abiertos</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
