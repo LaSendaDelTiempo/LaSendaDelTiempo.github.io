@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+<!-- ═══ SEO PRIMARIO ═══ -->
+<title>RecuperaArchivos · Recupera archivos eliminados en Windows gratis</title>
+<meta name="description" content="Recupera archivos eliminados de la Papelera, Shadow Copies, Temp, OneDrive, USB y más. Herramienta gratuita para Windows 10 y 11. Sin registro, sin suscripción.">
+<meta name="keywords" content="recuperar archivos eliminados windows, recuperar archivos borrados, recuperar documentos borrados, shadow copies windows, recuperar archivos gratis, recuperar pdf borrado, recuperar fotos borradas windows">
+<meta name="author" content="LaSendaDelTiempo">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="language" content="es">
+<link rel="canonical" href="https://lasendadeltiempo.github.io/recuperaarchivos/">
+ 
+<!-- ═══ OPEN GRAPH ═══ -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="RecuperaArchivos">
+<meta property="og:title" content="RecuperaArchivos · Recupera archivos eliminados en Windows">
+<meta property="og:description" content="Herramienta gratuita para recuperar archivos eliminados en Windows 10/11. Busca en Papelera, Shadow Copies, Temp, OneDrive, USB y más.">
+<meta property="og:url" content="https://lasendadeltiempo.github.io/recuperaarchivos/">
+ 
+<!-- ═══ TWITTER CARD ═══ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RecuperaArchivos · Recupera archivos eliminados en Windows">
+<meta name="twitter:description" content="Herramienta gratuita para recuperar archivos eliminados en Windows 10/11.">
+ 
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --amber:     #c8843a;
+  --amber-d:   #8a5520;
+  --amber-l:   #fff3e0;
+  --amber-m:   #ffcc80;
+  --accent:    #e65100;
+  --bg:        #1a1005;
+  --bg2:       #231508;
+  --text:      #f5deb3;
+  --text-m:    #c8943a;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+ 
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{0%{opacity:0;transform:scale(.85) translateY(10px)}60%{transform:scale(1.04)}100%{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(200,132,58,.4)}70%{box-shadow:0 0 0 10px rgba(200,132,58,0)}100%{box-shadow:0 0 0 0 rgba(200,132,58,0)}}
+ 
+/* ── NAV ── */
+.l-nav{
+  position:sticky;top:0;z-index:999;
+  background:rgba(26,16,5,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(200,132,58,.2);
+  box-shadow:0 2px 16px rgba(0,0,0,.4);
+  width:100%;
+}
+.l-nav-inner{
+  max-width:960px;margin:0 auto;
+  display:flex;align-items:center;gap:8px;
+  padding:0 1.5rem;height:52px;
+}
+.l-nav-brand{
+  display:flex;align-items:center;gap:8px;
+  font-family:'Playfair Display',serif;
+  font-size:17px;color:var(--text);
+  text-decoration:none;flex-shrink:0;
+  font-weight:700;letter-spacing:-.3px;
+}
+.l-nav-badge{
+  width:28px;height:28px;border-radius:7px;
+  background:var(--amber);color:white;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+.l-nav-links{
+  display:flex;align-items:center;gap:4px;
+  margin-left:auto;flex-wrap:nowrap;
+}
+.l-nav-link{
+  font-size:13px;font-weight:600;color:var(--text-m);
+  text-decoration:none;padding:6px 11px;border-radius:8px;
+  transition:background .15s,color .15s;white-space:nowrap;
+}
+.l-nav-link:hover{background:rgba(200,132,58,.15);color:var(--text);}
+.l-nav-cta{
+  background:var(--amber);color:white;border:none;
+  border-radius:10px;padding:7px 16px;
+  font-size:13px;font-weight:700;font-family:'Nunito',sans-serif;
+  cursor:pointer;white-space:nowrap;margin-left:6px;
+  text-decoration:none;display:inline-block;
+  transition:background .15s,transform .15s;
+}
+.l-nav-cta:hover{background:var(--amber-d);transform:translateY(-1px);}
+.l-nav-burger{
+  display:none;background:none;border:1px solid rgba(200,132,58,.3);
+  border-radius:8px;padding:5px 10px;font-size:16px;cursor:pointer;
+  color:var(--text);margin-left:auto;
+}
+.l-nav-mobile{
+  display:none;flex-direction:column;
+  background:var(--bg2);border-top:1px solid rgba(200,132,58,.15);
+  padding:4px 0;
+}
+.l-nav-mobile.open{display:flex;}
+.l-nav-mlink{
+  font-size:14px;font-weight:600;color:var(--text-m);
+  text-decoration:none;padding:11px 20px;
+  border-bottom:1px solid rgba(200,132,58,.07);
+  transition:background .12s;
+}
+.l-nav-mlink:hover{background:rgba(200,132,58,.1);}
+@media(max-width:700px){
+  .l-nav-links{display:none;}
+  .l-nav-burger{display:block;}
+}
+ 
+/* ── HERO ── */
+#hero{
+  min-height:90vh;
+  background: radial-gradient(ellipse at 20% 0%, rgba(200,132,58,.15) 0%, transparent 55%),
+              radial-gradient(ellipse at 80% 100%, rgba(200,132,58,.1) 0%, transparent 50%),
+              var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:4rem 2rem 3rem;text-align:center;position:relative;overflow:hidden;
+}
+#hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(200,132,58,.04) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+#hero > *{position:relative;z-index:1;}
+ 
+.hero-badge{
+  width:80px;height:80px;border-radius:20px;
+  background:rgba(200,132,58,.15);border:2px solid rgba(200,132,58,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:40px;margin-bottom:1.5rem;
+  box-shadow:0 8px 32px rgba(200,132,58,.2);
+  animation:fadeUp .6s ease both;
+  transition:transform .2s,box-shadow .2s;
+}
+.hero-badge:hover{transform:rotate(-4deg) scale(1.08);box-shadow:0 12px 40px rgba(200,132,58,.35);}
+ 
+.hero-title{
+  font-size:clamp(24px,4.5vw,42px);font-weight:700;
+  line-height:1.2;margin-bottom:.7rem;max-width:580px;
+  animation:fadeUp .65s .1s ease both;color:var(--text);
+}
+.hero-title em{
+  font-style:normal;
+  background:linear-gradient(135deg, var(--amber) 0%, #ffcc80 50%, var(--amber) 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shimmer 3s linear infinite;
+}
+.hero-sub{
+  font-size:16px;color:var(--text-m);margin-bottom:2rem;max-width:460px;line-height:1.65;
+  animation:fadeUp .65s .18s ease both;
+}
+ 
+.stats-row{
+  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:2rem;
+  animation:fadeUp .65s .25s ease both;
+}
+.stat-pill{
+  background:rgba(200,132,58,.1);border:1.5px solid rgba(200,132,58,.3);border-radius:14px;
+  padding:12px 20px;display:flex;flex-direction:column;align-items:center;
+  transition:transform .2s,box-shadow .2s,border-color .2s;cursor:default;
+}
+.stat-pill:hover{
+  transform:translateY(-3px) scale(1.04);
+  box-shadow:0 8px 24px rgba(200,132,58,.2);
+  border-color:var(--amber);
+}
+.stat-pill strong{font-size:22px;font-weight:700;color:var(--amber);line-height:1;}
+.stat-pill small{font-size:10px;color:var(--text-m);margin-top:4px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+ 
+.btn-download-group{
+  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
+  animation:popIn .7s .4s ease both;margin-bottom:1.5rem;
+}
+.btn-primary{
+  background:linear-gradient(135deg, var(--amber) 0%, #e09040 100%);
+  color:white;border:none;border-radius:14px;padding:15px 36px;
+  font-size:17px;font-weight:700;font-family:'Nunito',sans-serif;cursor:pointer;
+  box-shadow:0 6px 24px rgba(200,132,58,.4);
+  transition:transform .18s,box-shadow .18s;
+  text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  position:relative;overflow:hidden;
+}
+.btn-primary::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.15) 0%,transparent 60%);
+  pointer-events:none;
+}
+.btn-primary:hover{
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 10px 32px rgba(200,132,58,.5);
+  animation:pulse-ring 1.2s ease-out;
+}
+.btn-secondary{
+  background:rgba(200,132,58,.12);color:var(--text);
+  border:1.5px solid rgba(200,132,58,.35);border-radius:14px;padding:15px 28px;
+  font-size:15px;font-weight:700;font-family:'Nunito',sans-serif;cursor:pointer;
+  transition:transform .18s,background .18s;
+  text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-secondary:hover{background:rgba(200,132,58,.22);transform:translateY(-2px);}
+ 
+.hero-features{
+  display:flex;gap:20px;flex-wrap:wrap;justify-content:center;
+  animation:fadeIn .8s .55s ease both;
+}
+.feat{
+  display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-m);
+  padding:4px 0;transition:color .15s;
+}
+.feat:hover{color:var(--text);}
+.feat-check{color:var(--amber);font-weight:900;font-size:15px;}
+ 
+/* ── SECTIONS ── */
+.l-section{
+  width:100%;padding:4rem 1.5rem;
+  border-top:1px solid rgba(200,132,58,.12);
+}
+.l-section-inner{
+  max-width:900px;margin:0 auto;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+}
+.l-section-badge{font-size:36px;margin-bottom:.8rem;line-height:1;}
+.l-section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(20px,3vw,28px);color:var(--text);
+  margin-bottom:.6rem;
+}
+.l-section-sub{
+  font-size:14px;color:var(--text-m);line-height:1.7;max-width:600px;margin-bottom:2rem;
+}
+ 
+/* ── FEATURES GRID ── */
+.features-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;width:100%;text-align:left;
+}
+.feature-card{
+  background:rgba(200,132,58,.08);border:1px solid rgba(200,132,58,.2);border-radius:16px;
+  padding:1.4rem;transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.feature-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(200,132,58,.15);
+  border-color:rgba(200,132,58,.4);
+}
+.fc-icon{font-size:28px;margin-bottom:.7rem;}
+.feature-card h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:.4rem;}
+.feature-card p{font-size:12px;color:var(--text-m);line-height:1.6;}
+ 
+/* ── HOW TO ── */
+.pasos-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;width:100%;text-align:left;
+}
+.paso-card{
+  background:rgba(200,132,58,.08);border:1px solid rgba(200,132,58,.2);border-radius:16px;
+  padding:1.4rem;position:relative;overflow:hidden;
+  transition:transform .18s,box-shadow .18s;
+}
+.paso-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(200,132,58,.15);}
+.paso-num{
+  width:36px;height:36px;background:var(--amber);color:white;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:700;margin-bottom:.8rem;
+}
+.paso-card h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:.4rem;}
+.paso-card p{font-size:12px;color:var(--text-m);line-height:1.6;}
+ 
+/* ── DOWNLOAD BOX ── */
+.download-box{
+  background:rgba(200,132,58,.08);border:1.5px solid rgba(200,132,58,.25);
+  border-radius:20px;padding:2.5rem;width:100%;max-width:700px;
+  margin-top:1rem;
+}
+.download-row{
+  display:flex;gap:16px;flex-wrap:wrap;justify-content:center;
+  margin-bottom:1.5rem;
+}
+.dl-card{
+  flex:1;min-width:220px;
+  background:rgba(200,132,58,.1);border:1px solid rgba(200,132,58,.2);
+  border-radius:14px;padding:1.4rem;text-align:center;
+  transition:transform .18s,border-color .18s;
+}
+.dl-card:hover{transform:translateY(-3px);border-color:rgba(200,132,58,.45);}
+.dl-icon{font-size:36px;margin-bottom:.6rem;}
+.dl-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:.3rem;}
+.dl-desc{font-size:11px;color:var(--text-m);margin-bottom:1rem;line-height:1.5;}
+.dl-size{font-size:10px;color:rgba(200,132,58,.6);margin-top:.4rem;}
+.dl-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--amber);color:white;text-decoration:none;
+  border-radius:10px;padding:9px 20px;font-size:13px;font-weight:700;
+  transition:background .15s,transform .15s;
+}
+.dl-btn:hover{background:var(--amber-d);transform:translateY(-1px);}
+.dl-btn-sec{
+  display:inline-flex;align-items:center;gap:6px;
+  background:transparent;color:var(--text-m);text-decoration:none;
+  border:1px solid rgba(200,132,58,.3);
+  border-radius:10px;padding:9px 20px;font-size:13px;font-weight:700;
+  transition:background .15s,transform .15s;
+}
+.dl-btn-sec:hover{background:rgba(200,132,58,.1);transform:translateY(-1px);}
+ 
+.dl-note{font-size:11px;color:rgba(200,132,58,.5);text-align:center;margin-top:.5rem;}
+ 
+/* ── EXTENSION LIST ── */
+.ext-grid{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+  margin-top:1rem;
+}
+.ext-chip{
+  background:rgba(200,132,58,.12);border:1px solid rgba(200,132,58,.25);
+  border-radius:20px;padding:5px 14px;font-size:12px;font-weight:700;
+  color:var(--amber);transition:background .15s,transform .15s;
+}
+.ext-chip:hover{background:rgba(200,132,58,.22);transform:translateY(-2px);}
+ 
+/* ── FAQ ── */
+.faq-list{width:100%;max-width:700px;text-align:left;}
+.faq-item{
+  border-bottom:1px solid rgba(200,132,58,.12);padding:1.2rem 0;
+}
+.faq-q{font-size:15px;font-weight:700;color:var(--text);margin-bottom:.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.faq-q::after{content:'＋';color:var(--amber);font-size:18px;flex-shrink:0;transition:transform .2s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{font-size:13px;color:var(--text-m);line-height:1.7;display:none;}
+.faq-item.open .faq-a{display:block;}
+ 
+/* ── FOOTER ── */
+footer{
+  background:var(--bg2);border-top:1px solid rgba(200,132,58,.12);
+  padding:2rem 1.5rem;text-align:center;
+}
+footer p{font-size:12px;color:rgba(200,132,58,.4);margin-bottom:.4rem;}
+footer a{color:rgba(200,132,58,.6);text-decoration:none;}
+footer a:hover{color:var(--amber);}
+ 
+@media(max-width:600px){
+  #hero{padding:3rem 1rem 2rem;}
+  .l-section{padding:2.5rem 1rem;}
+  .features-grid,.pasos-grid{grid-template-columns:1fr;}
+  .download-row{flex-direction:column;}
+  .btn-download-group{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+ 
+<!-- ── NAV ── -->
+<nav class="l-nav" id="l-nav">
+  <div class="l-nav-inner">
+    <a class="l-nav-brand" href="https://lasendadeltiempo.github.io/">
+      <span class="l-nav-badge">🎯</span> RecuperaArchivos
+    </a>
+    <div class="l-nav-links">
+      <a href="#sec-funciones" class="l-nav-link">Funciones</a>
+      <a href="#sec-comousar" class="l-nav-link">Cómo usar</a>
+      <a href="#sec-faq" class="l-nav-link">FAQ</a>
+      <a href="#sec-descarga" class="l-nav-cta">⬇ Descargar gratis</a>
+    </div>
+    <button class="l-nav-burger" id="l-nav-burger" onclick="document.getElementById('l-nav-menu').classList.toggle('open')">☰</button>
+  </div>
+  <div class="l-nav-mobile" id="l-nav-menu">
+    <a href="https://lasendadeltiempo.github.io/" class="l-nav-mlink">🏠 Inicio</a>
+    <a href="#sec-funciones" class="l-nav-mlink" onclick="document.getElementById('l-nav-menu').classList.remove('open')">⚙️ Funciones</a>
+    <a href="#sec-comousar" class="l-nav-mlink" onclick="document.getElementById('l-nav-menu').classList.remove('open')">📖 Cómo usar</a>
+    <a href="#sec-faq" class="l-nav-mlink" onclick="document.getElementById('l-nav-menu').classList.remove('open')">❓ FAQ</a>
+    <a href="#sec-descarga" class="l-nav-cta" style="margin:8px 16px 12px;text-align:center;" onclick="document.getElementById('l-nav-menu').classList.remove('open')">⬇ Descargar gratis</a>
+  </div>
+</nav>
+ 
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-badge">🎯</div>
+  <h1 class="hero-title">Recupera lo que <em>creías perdido</em></h1>
+  <p class="hero-sub">Herramienta gratuita para Windows que busca archivos eliminados en la Papelera, Shadow Copies, Temp, OneDrive, USB y más. Sin instalación de .NET, todo incluido.</p>
+ 
+  <div class="stats-row">
+    <div class="stat-pill"><strong>7+</strong><small>Orígenes</small></div>
+    <div class="stat-pill"><strong>11</strong><small>Extensiones</small></div>
+    <div class="stat-pill"><strong>Win 10/11</strong><small>Compatible</small></div>
+    <div class="stat-pill"><strong>0 €</strong><small>Gratis</small></div>
+    <div class="stat-pill"><strong>47 MB</strong><small>Instalador</small></div>
+  </div>
+ 
+  <div class="btn-download-group">
+    <a href="https://github.com/LaSendaDelTiempo/RecuperaArchivos/releases/latest/download/RecuperaArchivos-Setup-v1.0.exe" class="btn-primary">
+      ⬇ Descargar instalador
+    </a>
+    <a href="#sec-descarga" class="btn-secondary">
+      Ver todas las versiones
+    </a>
+  </div>
+ 
+  <div class="hero-features">
+    <div class="feat"><span class="feat-check">✓</span> Sin registro</div>
+    <div class="feat"><span class="feat-check">✓</span> Sin anuncios</div>
+    <div class="feat"><span class="feat-check">✓</span> No requiere .NET</div>
+    <div class="feat"><span class="feat-check">✓</span> Código abierto</div>
+    <div class="feat"><span class="feat-check">✓</span> Windows 10 y 11</div>
+  </div>
+</section>
+ 
+<!-- ── FUNCIONES ── -->
+<section class="l-section" id="sec-funciones">
+  <div class="l-section-inner">
+    <div class="l-section-badge">⚙️</div>
+    <h2 class="l-section-title">¿Qué puede recuperar?</h2>
+    <p class="l-section-sub">RecuperaArchivos analiza múltiples ubicaciones del sistema para encontrar archivos que creías perdidos para siempre.</p>
+ 
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="fc-icon">🗑️</div>
+        <h3>Papelera de Reciclaje</h3>
+        <p>Busca en todas las unidades conectadas. Recupera archivos eliminados recientemente que aún no han sido borrados definitivamente.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">⏱️</div>
+        <h3>Shadow Copies</h3>
+        <p>Accede a los puntos de restauración de Windows. Versiones anteriores de tus documentos guardadas automáticamente por el sistema.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">📁</div>
+        <h3>Documentos y Descargas</h3>
+        <p>Escanea las carpetas de perfil del usuario: Documentos, Descargas, Escritorio, Imágenes y Vídeos.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">☁️</div>
+        <h3>OneDrive y Google Drive</h3>
+        <p>Busca en las carpetas sincronizadas de OneDrive y Google Drive para recuperar archivos borrados de la nube.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">🔌</div>
+        <h3>USB y unidades externas</h3>
+        <p>Detecta automáticamente dispositivos extraíbles conectados y busca en ellos con el mismo filtro de extensión y origen.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">📄</div>
+        <h3>Office y caché</h3>
+        <p>Recupera autoguardados de Word, Excel y PowerPoint, además de archivos temporales de Chrome y Edge.</p>
+      </div>
+    </div>
+ 
+    <p class="l-section-sub" style="margin-top:2rem;margin-bottom:1rem;">Extensiones soportadas</p>
+    <div class="ext-grid">
+      <span class="ext-chip">.pdf</span>
+      <span class="ext-chip">.docx</span>
+      <span class="ext-chip">.xlsx</span>
+      <span class="ext-chip">.pptx</span>
+      <span class="ext-chip">.jpg</span>
+      <span class="ext-chip">.png</span>
+      <span class="ext-chip">.mp4</span>
+      <span class="ext-chip">.txt</span>
+      <span class="ext-chip">.zip</span>
+      <span class="ext-chip">.tmp</span>
+      <span class="ext-chip">+ más</span>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── CÓMO USAR ── -->
+<section class="l-section" id="sec-comousar">
+  <div class="l-section-inner">
+    <div class="l-section-badge">📖</div>
+    <h2 class="l-section-title">Cómo usar RecuperaArchivos</h2>
+    <p class="l-section-sub">En cuatro pasos encuentras y recuperas tus archivos eliminados.</p>
+ 
+    <div class="pasos-grid">
+      <div class="paso-card">
+        <div class="paso-num">1</div>
+        <h3>Descarga e instala</h3>
+        <p>Descarga el instalador, ejecútalo y sigue los pasos. En menos de un minuto tendrás la app lista en tu equipo.</p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">2</div>
+        <h3>Elige el origen</h3>
+        <p>Selecciona dónde buscar: Papelera, Shadow Copy, OneDrive, USB... o deja "Todos" para un escaneo completo.</p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">3</div>
+        <h3>Filtra por extensión</h3>
+        <p>Elige el tipo de archivo que buscas: .pdf, .docx, .xlsx, .jpg, .mp4... El filtro reduce los resultados al instante.</p>
+      </div>
+      <div class="paso-card">
+        <div class="paso-num">4</div>
+        <h3>Recupera</h3>
+        <p>Marca los archivos que quieras recuperar, pulsa "Recuperar seleccionados" y elige dónde guardarlos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── DESCARGA ── -->
+<section class="l-section" id="sec-descarga">
+  <div class="l-section-inner">
+    <div class="l-section-badge">⬇️</div>
+    <h2 class="l-section-title">Descarga RecuperaArchivos</h2>
+    <p class="l-section-sub">Elige la versión que mejor se adapta a ti. Ambas son gratuitas y no requieren .NET instalado.</p>
+ 
+    <div class="download-box">
+      <div class="download-row">
+        <div class="dl-card">
+          <div class="dl-icon">📦</div>
+          <div class="dl-title">Versión instalador</div>
+          <div class="dl-desc">Instala la app en tu PC. Aparece en "Programas", crea acceso directo y tiene desinstalador incluido. Recomendado.</div>
+          <a href="https://github.com/LaSendaDelTiempo/RecuperaArchivos/releases/latest/download/RecuperaArchivos-Setup-v1.0.exe" class="dl-btn">⬇ Descargar Setup</a>
+          <div class="dl-size">RecuperaArchivos-Setup-v1.0.exe · 47 MB</div>
+        </div>
+        <div class="dl-card">
+          <div class="dl-icon">💼</div>
+          <div class="dl-title">Versión portable</div>
+          <div class="dl-desc">Descomprime y ejecuta directamente. Sin instalación, sin tocar el sistema. Ideal para llevar en un USB.</div>
+          <a href="https://github.com/LaSendaDelTiempo/RecuperaArchivos/releases/latest/download/RecuperaArchivos-v1.0-portable.zip" class="dl-btn-sec">⬇ Descargar Portable</a>
+          <div class="dl-size">RecuperaArchivos-v1.0-portable.zip · 63 MB</div>
+        </div>
+      </div>
+      <div class="dl-note">⚠️ Windows puede mostrar un aviso de seguridad al ejecutar. Pulsa "Más información" → "Ejecutar de todas formas". Es normal en apps sin firma de código.</div>
+    </div>
+ 
+    <p style="font-size:12px;color:rgba(200,132,58,.4);margin-top:1.5rem;">
+      Compatible con Windows 10 (64 bits) y Windows 11 · 
+      <a href="https://github.com/LaSendaDelTiempo/RecuperaArchivos" style="color:rgba(200,132,58,.5);text-decoration:none;">Ver código fuente en GitHub →</a>
+    </p>
+  </div>
+</section>
+ 
+<!-- ── FAQ ── -->
+<section class="l-section" id="sec-faq">
+  <div class="l-section-inner">
+    <div class="l-section-badge">❓</div>
+    <h2 class="l-section-title">Preguntas frecuentes</h2>
+    <p class="l-section-sub" style="margin-bottom:1.5rem;">Todo lo que necesitas saber antes de descargar.</p>
+ 
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Es completamente gratuito?</div>
+        <div class="faq-a">Sí. RecuperaArchivos es gratuito, sin límites, sin versión premium y sin anuncios. El código fuente está disponible en GitHub.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Necesito instalar .NET o algún otro programa?</div>
+        <div class="faq-a">No. El ejecutable incluye todo lo necesario para funcionar. No necesitas instalar .NET, Visual C++ ni ninguna dependencia adicional.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Por qué Windows me avisa de que el archivo puede ser peligroso?</div>
+        <div class="faq-a">Windows muestra ese aviso en aplicaciones sin firma de código de pago. RecuperaArchivos es software abierto y seguro. Pulsa "Más información" → "Ejecutar de todas formas" para continuar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Funciona en Windows 10?</div>
+        <div class="faq-a">Sí, es compatible con Windows 10 de 64 bits (versión 1903 o superior) y con Windows 11. No funciona en Windows de 32 bits.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Puedo recuperar archivos de hace meses?</div>
+        <div class="faq-a">Depende de si Windows tiene Shadow Copies (puntos de restauración) de esas fechas. Si están activados, RecuperaArchivos puede encontrar versiones antiguas de tus documentos. Los archivos borrados de la Papelera y luego vaciada son más difíciles de recuperar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Qué diferencia hay entre la versión instalador y la portable?</div>
+        <div class="faq-a">El instalador integra la app en el sistema: crea acceso directo, aparece en "Agregar o quitar programas" y tiene desinstalador. La portable es un ejecutable suelto que funciona sin tocar el sistema, ideal para llevar en un USB.</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ── FOOTER ── -->
+<footer>
+  <p>RecuperaArchivos · <a href="https://lasendadeltiempo.github.io/">QuienBuscaEncuentra</a> · <a href="https://github.com/LaSendaDelTiempo/RecuperaArchivos">GitHub</a></p>
+  <p>Gratis · Sin registro · Código abierto · Windows 10/11</p>
+</footer>
+ 
+</body>
+</html>
